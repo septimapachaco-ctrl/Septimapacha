@@ -1,0 +1,3 @@
+Carpeta opcional para capturas propias de cada plantilla del catálogo
+(plantillas.html), si en el futuro querés reemplazar los íconos/emojis
+de vista previa por capturas reales de cada demo.

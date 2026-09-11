@@ -1,0 +1,8 @@
+Colocá acá las capturas reales de cada proyecto mostrado en codigo-fluido.html:
+
+- sinergia-desarrolladora.jpg
+- artnonimus.jpg
+- nali-alma.jpg
+
+Formato sugerido: JPG o WEBP, 1280x800px aprox., peso liviano (menos de 300KB)
+para no afectar la velocidad de carga del sitio.
