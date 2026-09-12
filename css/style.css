@@ -693,6 +693,73 @@ a { color: inherit; }
   .splash-logo { animation: none; }
 }
 
+/* Burbujas de agua del splash (heredadas de la antigua página "Code Agua") */
+.splash-bubbles { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+.splash-bubble {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 0 16px rgba(46, 204, 113, 0.7);
+  opacity: 0;
+  animation: bubbleIn 1.1s ease-out forwards, bubblePop 0.45s ease-out forwards;
+}
+.splash-bubble.word {
+  width: clamp(130px, 20vw, 190px);
+  height: clamp(130px, 20vw, 190px);
+  font-size: clamp(0.85rem, 2.2vw, 1.15rem);
+  letter-spacing: 1px;
+}
+.splash-bubble.word::before {
+  content: '';
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+}
+.splash-bubble.word .ring-a, .splash-bubble.word .ring-b {
+  position: absolute;
+  inset: 14%;
+  border-radius: 50%;
+}
+.splash-bubble.word .ring-a { border-left: 10px solid var(--fluido-primary); filter: blur(8px); animation: bubbleSpin 4s linear infinite; }
+.splash-bubble.word .ring-b { border-right: 10px solid var(--fluido-secondary); filter: blur(8px); animation: bubbleSpin 4s linear infinite reverse; }
+.splash-bubble.word.word-1 { top: 18%; left: 12%; animation-delay: 0s, 1.7s; }
+.splash-bubble.word.word-2 { bottom: 14%; right: 10%; animation-delay: 0.2s, 1.9s; }
+
+.splash-bubble.dot {
+  width: 46px;
+  height: 46px;
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.25);
+}
+.splash-bubble.dot-1 { top: 15%; right: 20%; animation-delay: 0.1s, 1.6s; }
+.splash-bubble.dot-2 { bottom: 22%; left: 20%; animation-delay: 0.35s, 1.75s; }
+.splash-bubble.dot-3 { top: 55%; right: 8%; animation-delay: 0.5s, 1.85s; }
+.splash-bubble.dot-4 { top: 68%; left: 6%; width: 30px; height: 30px; animation-delay: 0.65s, 1.95s; }
+
+@keyframes bubbleIn {
+  0% { transform: scale(0); opacity: 0; }
+  60% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes bubblePop {
+  0% { transform: scale(1); opacity: 1; }
+  60% { transform: scale(1.25); opacity: 0.7; }
+  100% { transform: scale(2); opacity: 0; }
+}
+@keyframes bubbleSpin { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .splash-bubble { animation: none; opacity: 0; }
+}
+@media (max-width: 480px) {
+  .splash-bubble.dot-3, .splash-bubble.dot-4 { display: none; }
+}
+
 /* Íconos de la chakana en el splash y en el divisor del hero */
 .chakana-line { animation: glowPulse 2.4s ease-in-out infinite; }
 .chakana-center-fill { animation: breathe 2.2s ease-in-out infinite; }
@@ -729,6 +796,59 @@ a { color: inherit; }
   50% { transform: translateY(-25px) translateX(12px); }
 }
 @media (max-width: 900px) { .floating-bubble { display: none; } }
+
+/* ---------- Enredaderas de fondo (todas las páginas) ---------- */
+/* Decoración ambiente, fija y detrás de todo el contenido (z-index negativo).
+   Solo anima opacity/transform/stroke-dashoffset: liviano para el navegador. */
+.page-foliage {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+}
+.foliage-corner {
+  position: absolute;
+  width: clamp(140px, 20vw, 260px);
+  height: auto;
+  opacity: 0.16;
+}
+.foliage-bottom-left { left: 0; bottom: 0; }
+.foliage-top-right { right: 0; top: 0; transform: rotate(180deg); }
+
+.vine-sway {
+  animation: vineSway 7s ease-in-out infinite;
+}
+.vine-stem {
+  fill: none;
+  stroke: var(--fluido-primary);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: vineGrow 3.5s ease-out forwards;
+}
+.vine-leaf {
+  fill: var(--fluido-accent);
+  opacity: 0;
+  animation: leafFadeIn 0.9s ease-out forwards;
+}
+
+@keyframes vineGrow { to { stroke-dashoffset: 0; } }
+@keyframes leafFadeIn { to { opacity: 1; } }
+@keyframes vineSway {
+  0%, 100% { transform: rotate(-1.5deg); }
+  50% { transform: rotate(1.5deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vine-sway { animation: none; }
+  .vine-stem { animation: none; stroke-dashoffset: 0; }
+  .vine-leaf { animation: none; opacity: 1; }
+}
+@media (max-width: 640px) {
+  .foliage-corner { width: clamp(90px, 30vw, 150px); opacity: 0.12; }
+}
 
 /* ---------- Utilidades ---------- */
 .text-center { text-align: center; }
