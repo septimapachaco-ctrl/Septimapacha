@@ -57,15 +57,23 @@ function initScrollReveal() {
   window.setTimeout(() => items.forEach(reveal), 4000);
 }
 
-/* Pantalla de bienvenida (codigo-fluido.html): se oculta sola al cargar */
+/* Pantalla de bienvenida con el logo de la marca: se oculta sola al cargar */
 function initSplashScreen() {
   const splash = document.querySelector('.splash-screen');
   if (!splash) return;
+  // Si el usuario ya la vio en esta sesión, no la repetimos en cada página
+  let alreadyShown = false;
+  try { alreadyShown = sessionStorage.getItem('septimaSplashShown') === '1'; } catch (e) { /* almacenamiento no disponible */ }
+  if (alreadyShown) {
+    splash.style.display = 'none';
+    return;
+  }
   window.addEventListener('load', () => {
     setTimeout(() => {
       splash.classList.add('is-hidden');
-      setTimeout(() => { splash.style.display = 'none'; }, 700);
-    }, 900);
+      try { sessionStorage.setItem('septimaSplashShown', '1'); } catch (e) { /* almacenamiento no disponible */ }
+      setTimeout(() => { splash.style.display = 'none'; }, 800);
+    }, 1400);
   });
 }
 
