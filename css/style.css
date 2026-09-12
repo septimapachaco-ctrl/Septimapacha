@@ -797,59 +797,6 @@ a { color: inherit; }
 }
 @media (max-width: 900px) { .floating-bubble { display: none; } }
 
-/* ---------- Enredaderas de fondo (todas las páginas) ---------- */
-/* Decoración ambiente, fija y detrás de todo el contenido (z-index negativo).
-   Solo anima opacity/transform/stroke-dashoffset: liviano para el navegador. */
-.page-foliage {
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  overflow: hidden;
-  pointer-events: none;
-}
-.foliage-corner {
-  position: absolute;
-  width: clamp(140px, 20vw, 260px);
-  height: auto;
-  opacity: 0.16;
-}
-.foliage-bottom-left { left: 0; bottom: 0; }
-.foliage-top-right { right: 0; top: 0; transform: rotate(180deg); }
-
-.vine-sway {
-  animation: vineSway 7s ease-in-out infinite;
-}
-.vine-stem {
-  fill: none;
-  stroke: var(--fluido-primary);
-  stroke-width: 2.5;
-  stroke-linecap: round;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: vineGrow 3.5s ease-out forwards;
-}
-.vine-leaf {
-  fill: var(--fluido-accent);
-  opacity: 0;
-  animation: leafFadeIn 0.9s ease-out forwards;
-}
-
-@keyframes vineGrow { to { stroke-dashoffset: 0; } }
-@keyframes leafFadeIn { to { opacity: 1; } }
-@keyframes vineSway {
-  0%, 100% { transform: rotate(-1.5deg); }
-  50% { transform: rotate(1.5deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .vine-sway { animation: none; }
-  .vine-stem { animation: none; stroke-dashoffset: 0; }
-  .vine-leaf { animation: none; opacity: 1; }
-}
-@media (max-width: 640px) {
-  .foliage-corner { width: clamp(90px, 30vw, 150px); opacity: 0.12; }
-}
-
 /* ---------- Utilidades ---------- */
 .text-center { text-align: center; }
 .mt-2 { margin-top: 2rem; }
