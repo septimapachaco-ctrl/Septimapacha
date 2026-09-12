@@ -1,9 +1,15 @@
-Colocá acá las capturas reales de cada proyecto mostrado en codigo-fluido.html:
+Capturas de proyectos usadas en codigo-fluido.html:
 
-- sinergia-desarrolladora.jpg
-- artnonimus.jpg
-- nali-alma.jpg
-- formar-capacitaciones.jpg
+- sinergia-desarrolladora.png
+- artnonimus.png
+- nali-alma.png
+- formar-capacitaciones.png
 
-Formato sugerido: JPG o WEBP, 1280x800px aprox., peso liviano (menos de 300KB)
-para no afectar la velocidad de carga del sitio.
+Importante: si subís una captura nueva, usá la extensión que
+corresponda al formato REAL del archivo (.png si es un PNG, .jpg si es
+un JPG). Renombrar un .png a .jpg (o viceversa) sin convertirlo no
+cambia el contenido del archivo y puede hacer que el navegador no lo
+muestre — eso fue justamente lo que pasó acá la primera vez.
+
+Formato sugerido: PNG o JPG, 1280x800px aprox., peso liviano (menos de
+300KB) para no afectar la velocidad de carga del sitio.
