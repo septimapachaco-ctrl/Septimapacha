@@ -73,7 +73,7 @@ function initSplashScreen() {
       splash.classList.add('is-hidden');
       try { sessionStorage.setItem('septimaSplashShown', '1'); } catch (e) { /* almacenamiento no disponible */ }
       setTimeout(() => { splash.style.display = 'none'; }, 800);
-    }, 1400);
+    }, 2500);
   });
 }
 
