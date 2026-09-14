@@ -531,6 +531,65 @@ a { color: inherit; }
 }
 .section-alt { background: rgba(255, 255, 255, 0.02); }
 
+/* ---------- Sección "¿Qué es Séptima Pacha?" (tierra/fuego) ---------- */
+.pacha-fire-section {
+  position: relative;
+  overflow: hidden;
+  max-width: none;
+  padding: 5.5rem 1.5rem;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 150, 60, 0.22), transparent 60%),
+    linear-gradient(160deg, #b5501f 0%, #8a3311 45%, #6b230d 100%);
+}
+.pacha-fire-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(45deg, rgba(0,0,0,0.05) 0px, rgba(0,0,0,0.05) 2px, transparent 2px, transparent 4px);
+  opacity: 0.4;
+  pointer-events: none;
+}
+.pacha-fire-chakana {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14rem;
+  line-height: 1;
+  color: rgba(255, 220, 180, 0.12);
+  pointer-events: none;
+  user-select: none;
+}
+.pacha-fire-chakana-left { left: -3rem; }
+.pacha-fire-chakana-right { right: -3rem; }
+@media (max-width: 900px) { .pacha-fire-chakana { display: none; } }
+
+.pacha-fire-title {
+  position: relative;
+  color: #FBEFD9;
+  text-shadow: 0 0 24px rgba(255, 180, 90, 0.35);
+}
+.pacha-fire-copy {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  color: rgba(255, 240, 225, 0.9);
+}
+.pacha-fire-copy strong { color: #F5D08A; }
+.pacha-fire-subtitle { color: #FBEFD9; margin-bottom: 0.8rem; }
+
+.btn-fire {
+  background: rgba(255, 220, 190, 0.14);
+  border: 1px solid rgba(255, 220, 190, 0.4);
+  color: #FBEFD9;
+}
+.btn-fire:hover, .btn-fire:focus-visible {
+  background: rgba(255, 220, 190, 0.24);
+  transform: translateY(-3px);
+}
+
 /* ---------- Sección Servicios de la Pacha (home) ---------- */
 .services-section {
   max-width: none;
