@@ -455,6 +455,66 @@ a { color: inherit; }
 
 .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.5rem; }
 
+/* ---------- Hero de portada (layout a dos columnas, estilo dorado andino) ---------- */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: center;
+}
+.hero-main { display: flex; flex-direction: column; gap: 1.5rem; }
+
+.hero-title-alt {
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--pacha-oro);
+  text-shadow: 0 0 24px rgba(243, 156, 18, 0.3);
+}
+
+.hero-side { display: flex; flex-direction: column; gap: 1.1rem; }
+
+.hero-feature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  border: 1px solid rgba(243, 156, 18, 0.35);
+  border-radius: var(--radius-md);
+  background: rgba(10, 20, 12, 0.35);
+}
+.hero-feature-icon { width: 30px; height: 30px; flex-shrink: 0; color: var(--pacha-oro); }
+.hero-feature-text { display: flex; flex-direction: column; gap: 0.15rem; }
+.hero-feature-text strong { color: var(--text-light); font-size: 1.05rem; }
+.hero-feature-text span { color: var(--text-muted); font-size: 0.9rem; }
+
+.btn-hero-primary {
+  background: linear-gradient(135deg, var(--pacha-oro), var(--pacha-fuego));
+  color: #2b1400;
+  box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+}
+.btn-hero-primary:hover, .btn-hero-primary:focus-visible { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(243, 156, 18, 0.55); }
+
+.btn-hero-outline {
+  background: transparent;
+  border: 1px solid rgba(243, 156, 18, 0.6);
+  color: var(--pacha-oro);
+}
+.btn-hero-outline:hover, .btn-hero-outline:focus-visible { background: rgba(243, 156, 18, 0.12); }
+
+.hero-split .hero-price-cta {
+  border-color: rgba(243, 156, 18, 0.4);
+  max-width: none;
+  text-align: right;
+  justify-content: flex-end;
+}
+
+@media (max-width: 900px) {
+  .hero-split { grid-template-columns: 1fr; }
+  .hero-split .hero-price-cta { text-align: left; justify-content: flex-start; }
+}
+
 /* ---------- Secciones ---------- */
 .section {
   padding: 5rem 1.5rem;
