@@ -21,7 +21,7 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=2">
+<link rel="stylesheet" href="css/style.css?v=3">
 
 <!-- Datos estructurados: negocio local -->
 <script type="application/ld+json">
@@ -49,7 +49,7 @@
 }
 </script>
 </head>
-<body>
+<body class="page-home">
 <div class="splash-screen" aria-hidden="true">
 <div class="splash-bubbles" aria-hidden="true">
   <div class="splash-bubble word word-1">SÉPTIMA<span class="ring-a"></span><span class="ring-b"></span></div>
@@ -133,28 +133,80 @@
   </section>
 
   <!-- SERVICIOS (teaser) -->
-  <section class="section" id="servicios" aria-labelledby="servicios-title">
-    <h2 id="servicios-title" class="section-title fade-in">Servicios de la Pacha</h2>
-    <p class="section-subtitle fade-in">Desarrollo web, identidad visual y plantillas listas para lanzar tu proyecto.</p>
-    <div class="card-grid">
-      <article class="card fade-in">
-        <p class="card-icon" aria-hidden="true">💻</p>
-        <h3 class="card-title">Código Fluido</h3>
-        <p class="card-text">Desarrollo web a medida: landing pages, sitios institucionales y tiendas online responsivas.</p>
-        <p class="mt-2"><a class="btn btn-outline" href="codigo-fluido.html">Ver proyectos</a></p>
-      </article>
-      <article class="card fade-in">
-        <p class="card-icon" aria-hidden="true">🎨</p>
-        <h3 class="card-title">Plantillas Web</h3>
-        <p class="card-text">Diseños profesionales personalizables, listos para lanzar en pocos días.</p>
-        <p class="mt-2"><a class="btn btn-outline" href="plantillas.html">Ver catálogo</a></p>
-      </article>
-      <article class="card fade-in">
-        <p class="card-icon" aria-hidden="true">💧</p>
-        <h3 class="card-title">Tarifas y planes</h3>
-        <p class="card-text">Precios claros para cada etapa de tu negocio, desde una landing hasta un sitio con base de datos.</p>
-        <p class="mt-2"><a class="btn btn-outline" href="servicios.html">Ver precios</a></p>
-      </article>
+  <section class="section services-section" id="servicios" aria-labelledby="servicios-title">
+    <div class="services-inner">
+      <h2 id="servicios-title" class="section-title gradient-text fade-in">Servicios de la Pacha</h2>
+      <p class="section-subtitle fade-in">Soluciones digitales con identidad andina, modernas y escalables.</p>
+      <div class="card-grid services-grid">
+        <article class="card services-card fade-in">
+          <svg class="services-icon" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="42" cy="42" r="20" fill="none" stroke="url(#cordGrad)" stroke-width="3"/>
+            <circle cx="42" cy="42" r="12" fill="none" stroke="url(#cordGrad)" stroke-width="2.5"/>
+            <path d="M56 30 Q68 22 72 14 M64 26 Q76 22 82 24 M58 20 Q66 12 64 4" fill="none" stroke="url(#cordGrad)" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M56 54 Q66 64 70 74 M62 60 Q72 66 78 66 M58 68 Q64 78 60 86" fill="none" stroke="url(#cordGrad)" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M28 30 Q18 24 14 16" fill="none" stroke="url(#cordGrad)" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M28 54 Q18 62 16 72" fill="none" stroke="url(#cordGrad)" stroke-width="2.5" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="cordGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#3498DB"/>
+                <stop offset="100%" stop-color="#1ABC9C"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <h3 class="card-title">Código Fluido</h3>
+          <p class="card-text">Desarrollo a medida con código limpio, modular y escalable. Integramos buenas prácticas para sistemas rápidos y seguros.</p>
+          <p class="mt-2"><a class="btn btn-outline btn-pill" href="codigo-fluido.html">Ver más</a></p>
+        </article>
+        <article class="card services-card fade-in">
+          <svg class="services-icon" viewBox="0 0 100 100" aria-hidden="true">
+            <g fill="none" stroke="url(#chakanaGrad)" stroke-width="2.5">
+              <rect x="44" y="14" width="12" height="12"/>
+              <rect x="32" y="26" width="12" height="12"/>
+              <rect x="56" y="26" width="12" height="12"/>
+              <rect x="20" y="38" width="12" height="12"/>
+              <rect x="44" y="38" width="12" height="12"/>
+              <rect x="68" y="38" width="12" height="12"/>
+              <rect x="32" y="50" width="12" height="12"/>
+              <rect x="56" y="50" width="12" height="12"/>
+              <rect x="44" y="62" width="12" height="12"/>
+              <line x1="20" y1="38" x2="80" y2="38"/>
+              <line x1="50" y1="14" x2="50" y2="74"/>
+            </g>
+            <defs>
+              <linearGradient id="chakanaGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#2ECC71"/>
+                <stop offset="100%" stop-color="#1ABC9C"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <h3 class="card-title">Plantillas Web</h3>
+          <p class="card-text">Diseños web modernos basados en componentes. Plantillas responsivas, accesibles y listas para tu marca.</p>
+          <p class="mt-2"><a class="btn btn-outline btn-pill" href="plantillas.html">Ver más</a></p>
+        </article>
+        <article class="card services-card fade-in">
+          <svg class="services-icon" viewBox="0 0 100 100" aria-hidden="true">
+            <path d="M50 10 C50 10 26 42 26 62 C26 76.5 36.5 88 50 88 C63.5 88 74 76.5 74 62 C74 42 50 10 50 10 Z" fill="url(#dropGrad)" stroke="#eaf6f0" stroke-width="2"/>
+            <circle cx="46" cy="48" r="7" fill="none" stroke="#F5D67A" stroke-width="2"/>
+            <g stroke="#F5D67A" stroke-width="2" stroke-linecap="round">
+              <line x1="46" y1="34" x2="46" y2="38"/>
+              <line x1="34" y1="48" x2="38" y2="48"/>
+              <line x1="54" y1="48" x2="58" y2="48"/>
+              <line x1="37" y1="39" x2="39.5" y2="41.5"/>
+              <line x1="55" y1="39" x2="52.5" y2="41.5"/>
+            </g>
+            <path d="M28 70 L42 56 L52 66 L62 54 L74 70 Z" fill="#12324a" opacity="0.55"/>
+            <defs>
+              <linearGradient id="dropGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#3498DB"/>
+                <stop offset="100%" stop-color="#2ECC71"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <h3 class="card-title">Tarifas y planes</h3>
+          <p class="card-text">Planes claros y flexibles para todo tipo de proyecto. Desde emprendedores hasta empresas en crecimiento.</p>
+          <p class="mt-2"><a class="btn btn-outline btn-pill" href="servicios.html">Ver más</a></p>
+        </article>
+      </div>
     </div>
   </section>
 

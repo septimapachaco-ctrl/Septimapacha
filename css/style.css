@@ -64,6 +64,21 @@ body {
 
 body.theme-pacha { background: var(--pacha-bg); }
 
+/* Fondos de marca por tipo de página */
+body.page-home {
+  background:
+    linear-gradient(180deg, rgba(6, 14, 22, 0.6), rgba(6, 14, 22, 0.82)),
+    url('../img/fondo2.jpg') center/cover no-repeat fixed;
+}
+body.page-sub {
+  background:
+    linear-gradient(180deg, rgba(6, 14, 22, 0.65), rgba(6, 14, 22, 0.85)),
+    url('../img/fondo3.jpg') center/cover no-repeat fixed;
+}
+@media (max-width: 768px) {
+  body.page-home, body.page-sub { background-attachment: scroll; }
+}
+
 .container { max-width: var(--max-width); margin: 0 auto; padding: 0 1.5rem; }
 
 a { color: inherit; }
@@ -447,6 +462,55 @@ a { color: inherit; }
   margin: 0 auto;
 }
 .section-alt { background: rgba(255, 255, 255, 0.02); }
+
+/* ---------- Sección Servicios de la Pacha (home) ---------- */
+.services-section {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(4, 10, 16, 0.72), rgba(4, 10, 16, 0.88)),
+    url('../img/fondo1.jpg') center/cover no-repeat;
+}
+.services-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5.5rem 1.5rem;
+  position: relative;
+}
+.services-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 320px;
+  background: radial-gradient(ellipse at center, rgba(46, 204, 113, 0.28), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.services-inner > * { position: relative; z-index: 1; }
+
+.services-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(6, 16, 26, 0.65);
+  box-shadow: 0 0 0 1px rgba(46, 204, 113, 0.08) inset;
+}
+.services-card:hover { box-shadow: 0 0 0 1px rgba(46, 204, 113, 0.15) inset, var(--shadow-glow); }
+.services-icon { width: 84px; height: 84px; margin-bottom: 1.2rem; filter: drop-shadow(0 0 10px rgba(46, 204, 113, 0.35)); }
+.services-card .card-title { color: var(--fluido-primary); }
+.services-card .card-text { font-size: 0.95rem; }
+
+.btn-pill {
+  padding: 0.7rem 1.8rem;
+  font-size: 0.85rem;
+  box-shadow: 0 0 16px rgba(46, 204, 113, 0.18);
+}
 
 /* ---------- Cards genéricas ---------- */
 .card-grid {
