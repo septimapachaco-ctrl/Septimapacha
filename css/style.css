@@ -127,6 +127,7 @@ a { color: inherit; }
 
 /* Texto "Séptima Pacha" animado con los colores propios de la marca */
 .brand-text {
+  color: var(--pacha-oro); /* respaldo si el navegador no soporta el recorte del degradé */
   background: linear-gradient(90deg,
     var(--pacha-oro),
     var(--pacha-fuego),
@@ -220,6 +221,7 @@ a { color: inherit; }
   width: 2.4rem;
   height: 2.4rem;
   flex-shrink: 0;
+  object-fit: contain;
 }
 
 .nav-toggle {
@@ -701,6 +703,7 @@ a { color: inherit; }
 .splash-logo {
   width: clamp(120px, 22vw, 180px);
   height: clamp(120px, 22vw, 180px);
+  object-fit: contain;
   animation: splashFloat 3s ease-in-out infinite;
 }
 @keyframes splashFloat {
