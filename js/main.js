@@ -144,12 +144,17 @@ function initServiciosControls() {
   const USD_BLUE_RATE = 1470;
   let currentCurrency = 'ARS';
 
+  // data-ars admite un valor ("280000") o un rango ("134400-235000").
+  // Sin data-ars se usa el texto del precio; si no hay un valor válido, se muestra "Consultar".
   document.querySelectorAll('.pricing-price').forEach((priceTag) => {
     const arsSpan = priceTag.querySelector('.price-ars');
     const usdSpan = priceTag.querySelector('.price-usd');
     if (!arsSpan || !usdSpan) return;
-    const arsValue = parseInt(arsSpan.textContent.replace(/[^0-9]/g, ''), 10);
-    usdSpan.textContent = `USD $${Math.round(arsValue / USD_BLUE_RATE)}`;
+    const raw = arsSpan.dataset.ars !== undefined ? arsSpan.dataset.ars : arsSpan.textContent.replace(/[^0-9]/g, '');
+    const values = raw.split('-').map((v) => parseInt(v, 10)).filter((v) => v >= USD_BLUE_RATE);
+    usdSpan.textContent = values.length
+      ? `USD $${values.map((v) => Math.round(v / USD_BLUE_RATE)).join(' – $')}`
+      : 'Consultar';
   });
 
   currencyBtn.addEventListener('click', () => {
