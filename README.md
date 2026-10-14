@@ -1,31 +1,47 @@
-# Séptima Pacha Co.
+# Séptima Pacha
 
-Sitio web de Séptima Pacha Co., agencia de desarrollo web con sede en Salta,
-Argentina, que trabaja de forma 100% remota con pymes y emprendedores de
-todo el país. HTML, CSS y JavaScript puro, sin frameworks.
+Sitio web de Séptima Pacha, estudio de diseño y desarrollo web de Natalia
+Jimena Almagro (Nali), nacido en Salta, para pymes, emprendedores y
+profesionales de Salta capital y de toda Argentina. HTML, CSS y JavaScript
+puro, sin frameworks, publicado con GitHub Pages.
 
 ## Estructura
 
 ```
 /
-├── index.html          Home
-├── servicios.html       Servicios y precios + FAQ
-├── codigo-fluido.html   Proyectos (portfolio de Código Fluido)
-├── plantillas.html      Catálogo de plantillas
-├── css/style.css        Estilos compartidos (variables, componentes)
-├── js/main.js           Navegación, scroll reveal, formulario, FAQ
-├── img/proyectos/       Capturas de proyectos reales (agregar manualmente)
-├── img/plantillas/      Capturas opcionales de plantillas
+├── index.html                          Home
+├── servicios.html                      Precios, planes, ¿Qué es SEO y GEO?, FAQ
+├── diseno-web-salta.html               Página local: diseño web en Salta
+├── cuanto-cuesta-una-pagina-web.html   Guía de precios (contenido para SEO/GEO)
+├── codigo-fluido.html                  Proyectos (portfolio)
+├── plantillas.html                     Catálogo de plantillas
+├── sobre-mi.html                       Natalia Jimena Almagro (autoría / E-E-A-T)
+├── terminos.html                       Términos, datos del prestador, licencias
+├── privacidad.html                     Política de privacidad (Ley 25.326)
+├── arrepentimiento.html                Botón de arrepentimiento y baja
+├── css/style.css                       Estilos compartidos
+├── js/main.js                          Navegación, formularios, conversión USD
+├── fonts/                              Tipografías alojadas localmente
+├── img/                                Imágenes en WebP + og-septima-pacha.jpg
+├── favicon.ico, apple-touch-icon.png
 ├── sitemap.xml
 └── robots.txt
 ```
 
-## Pendientes para el dueño del sitio
+## Pendientes para la dueña del sitio
 
-- Agregar las capturas reales de cada proyecto en `img/proyectos/`
-  (ver `img/proyectos/LEEME.txt`).
-- Agregar 1-2 testimonios reales en `codigo-fluido.html` (sección
-  "Lo que dicen nuestros clientes").
-- Reemplazar el enlace de Google Business Profile en el footer
-  (actualmente un placeholder).
-- Confirmar el número de WhatsApp único a usar en todo el sitio.
+- Completar los datos marcados con `[COMPLETAR: ...]` en `terminos.html` y
+  `privacidad.html` (CUIT, condición fiscal, domicilio). Buscarlos con:
+  `grep -rn "COMPLETAR" *.html`
+- Pegar el código de **Data Fiscal (ARCA)** en `terminos.html` (hay un
+  comentario que marca el lugar).
+- Crear una cuenta gratuita en https://web3forms.com con
+  hola@septimapacha.com y reemplazar `REEMPLAZAR-CON-ACCESS-KEY-DE-WEB3FORMS`
+  en index.html, servicios.html y arrepentimiento.html. Mientras tanto, los
+  formularios abren el cliente de correo.
+- Confirmar el precio del Mantenimiento Estándar en `servicios.html`
+  (comentario "REVISAR ANTES DE PUBLICAR").
+- Sumar una foto en `img/natalia-almagro.webp` (ver comentario en sobre-mi.html).
+- Sumar 2-3 testimonios reales en `codigo-fluido.html`.
+- Crear el Perfil de Empresa en Google y agregar su enlace al footer y a
+  `sameAs` en los datos estructurados de index.html.

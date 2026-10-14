@@ -6,8 +6,7 @@
 
 <title>Proyectos de Desarrollo Web y Diseño de Marca | Código Fluido - Séptima Pacha</title>
 <meta name="description" content="Código Fluido es el estudio de desarrollo web y diseño de imagen de marca de Séptima Pacha. Conocé nuestros proyectos reales para clientes de Salta y toda Argentina, y cómo trabajamos.">
-<meta name="keywords" content="código fluido, desarrollo web salta, diseño de imagen y marca personal, identidad visual, proyectos web argentina, portfolio desarrollo web, agencia web argentina">
-<meta name="author" content="Séptima Pacha">
+<meta name="author" content="Natalia Jimena Almagro">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://septimapacha.com/codigo-fluido.html">
 
@@ -16,11 +15,18 @@
 <meta property="og:description" content="Conocé los proyectos reales de desarrollo web y diseño de imagen de marca de Código Fluido, el estudio de Séptima Pacha, para clientes de toda Argentina.">
 <meta property="og:url" content="https://septimapacha.com/codigo-fluido.html">
 <meta property="og:site_name" content="Séptima Pacha">
+<meta property="og:locale" content="es_AR">
+<meta property="og:image" content="https://septimapacha.com/img/og-septima-pacha.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Séptima Pacha — Diseño de páginas web en Salta para toda Argentina">
+<meta name="twitter:card" content="summary_large_image">
 
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=8">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css?v=9">
 </head>
 <body class="page-sub">
 <div class="splash-screen" aria-hidden="true">
@@ -32,7 +38,7 @@
   <div class="splash-bubble dot dot-3"></div>
   <div class="splash-bubble dot dot-4"></div>
 </div>
-  <img class="splash-logo" src="img/logoseptima1.jpg" alt="Logo Séptima Pacha" width="160" height="160">
+  <img class="splash-logo" src="img/logo-septima-pacha.webp" alt="Logo Séptima Pacha" width="160" height="160">
   <p class="splash-text">Séptima Pacha</p>
   <p class="splash-subtext">Código Fluido</p>
 </div>
@@ -40,12 +46,15 @@
 
 <header class="site-header">
   <a href="index.html" class="site-logo">
-    <img class="site-logo-icon" src="img/logoseptima1.jpg" alt="Logo Séptima Pacha" width="40" height="40">
+    <img class="site-logo-icon" src="img/logo-septima-pacha.webp" alt="Logo Séptima Pacha" width="40" height="40">
     <span class="brand-text">Séptima Pacha</span>
   </a>
-  <button class="nav-toggle" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menú de navegación">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="header-actions">
+    <a class="header-legal-link" href="arrepentimiento.html">Botón de arrepentimiento</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menú de navegación">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 
 <div class="nav-backdrop"></div>
@@ -56,6 +65,7 @@
     <li><a href="servicios.html#precios">Precios</a></li>
     <li><a href="codigo-fluido.html">Proyectos</a></li>
     <li><a href="plantillas.html">Plantillas</a></li>
+    <li><a href="sobre-mi.html">Sobre mí</a></li>
   </ul>
   <div class="nav-whatsapp">
     <a class="btn btn-whatsapp" href="https://wa.me/543872271144?text=Hola%2C%20quiero%20consultar%20sobre%20sus%20servicios%20de%20desarrollo%20web" target="_blank" rel="noopener">💬 WhatsApp</a>
@@ -76,8 +86,7 @@
     <h1 id="hero-title" class="hero-title gradient-text">Desarrollo Web para Toda Argentina</h1>
     <p class="hero-lead">Especializados en <strong>diseño de páginas web profesionales</strong>. Creamos sitios web responsivos que convierten visitantes en clientes.</p>
     <div class="hero-badges">
-      <span class="hero-badge">🌍 Disponible también en Europa y Polonia</span>
-      <span class="hero-badge">🇦🇷 Con sede en Salta, para toda Argentina</span>
+      <span class="hero-badge">🇦🇷 Desde Salta para toda Argentina</span>
       <span class="hero-badge">🔍 Posicionamiento SEO y estrategia GEO</span>
     </div>
     <div class="hero-ctas">
@@ -89,11 +98,11 @@
   <!-- PROYECTOS -->
   <section class="section" id="proyectos" aria-labelledby="proyectos-title">
     <h2 id="proyectos-title" class="section-title fade-in">Proyectos Reales</h2>
-    <p class="section-subtitle fade-in">Algunos de los sitios que desarrollamos para clientes de Salta y de toda Argentina.</p>
+    <p class="section-subtitle fade-in">Algunos de los sitios que desarrollamos para clientes de Salta y de otras provincias.</p>
 
     <div class="card-grid">
       <article class="card project-card fade-in">
-        <img class="project-shot" src="img/proyectos/sinergia-desarrolladora.jpg" alt="Captura de pantalla del sitio web de Sinergia Desarrolladora">
+        <img class="project-shot" src="img/proyectos/sinergia-desarrolladora.webp" width="1200" height="640" loading="lazy" decoding="async" alt="Captura de pantalla del sitio web de Sinergia Desarrolladora">
         <div class="project-body">
           <p class="project-meta">Desarrolladora inmobiliaria</p>
           <h3 class="project-name">Sinergia Desarrolladora</h3>
@@ -103,7 +112,7 @@
       </article>
 
       <article class="card project-card fade-in">
-        <img class="project-shot" src="img/proyectos/artnonimus.png" alt="Captura de pantalla del sitio web de Artnonimus">
+        <img class="project-shot" src="img/proyectos/artnonimus.webp" width="1200" height="619" loading="lazy" decoding="async" alt="Captura de pantalla del sitio web de Artnonimus">
         <div class="project-body">
           <p class="project-meta">Arte y diseño</p>
           <h3 class="project-name">Artnonimus</h3>
@@ -113,7 +122,7 @@
       </article>
 
       <article class="card project-card fade-in">
-        <img class="project-shot" src="img/proyectos/nali-alma.png" alt="Captura de pantalla del sitio web de Nali Alma">
+        <img class="project-shot" src="img/proyectos/nali-alma.webp" width="1200" height="613" loading="lazy" decoding="async" alt="Captura de pantalla del sitio web de Nali Alma">
         <div class="project-body">
           <p class="project-meta">Artista multidisciplinar</p>
           <h3 class="project-name">Nali Alma</h3>
@@ -123,7 +132,7 @@
       </article>
 
       <article class="card project-card fade-in">
-        <img class="project-shot" src="img/proyectos/formar-capacitaciones.png" alt="Captura de pantalla del sitio web de Formar Capacitaciones">
+        <img class="project-shot" src="img/proyectos/formar-capacitaciones.webp" width="1200" height="620" loading="lazy" decoding="async" alt="Captura de pantalla del sitio web de Formar Capacitaciones">
         <div class="project-body">
           <p class="project-meta">Capacitación y formación profesional</p>
           <h3 class="project-name">Formar Capacitaciones</h3>
@@ -134,10 +143,7 @@
     </div>
   </section>
 
-  <!-- TESTIMONIOS -->
-  <section class="section section-alt" aria-labelledby="testimonios-title">
-    <h2 id="testimonios-title" class="section-title fade-in">Lo que dicen nuestros clientes</h2>
-  </section>
+  <!-- TESTIMONIOS: sumar acá 2-3 testimonios reales (nombre, rubro y texto) antes de mostrar la sección -->
 
   <!-- PLANTILLAS (teaser) -->
   <section class="section" aria-labelledby="plantillas-title">
@@ -229,15 +235,27 @@
   <div class="footer-grid">
     <div>
       <p class="footer-heading">Séptima Pacha</p>
-      <p class="card-text">Agencia de desarrollo web con sede en Salta, Argentina. Trabajamos 100% remoto con pymes y emprendedores de todo el país.</p>
+      <p class="card-text">Estudio de diseño y desarrollo web de <a href="sobre-mi.html">Natalia Jimena Almagro (Nali)</a>. Nacido en Salta, para pymes, emprendedores y profesionales de Salta capital y de toda Argentina.</p>
     </div>
     <div>
       <p class="footer-heading">Navegación</p>
       <ul class="footer-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="servicios.html#precios">Servicios y precios</a></li>
+        <li><a href="diseno-web-salta.html">Diseño web en Salta</a></li>
+        <li><a href="cuanto-cuesta-una-pagina-web.html">¿Cuánto cuesta una página web?</a></li>
         <li><a href="codigo-fluido.html">Proyectos</a></li>
         <li><a href="plantillas.html">Plantillas</a></li>
+        <li><a href="sobre-mi.html">Sobre mí</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-heading">Legal</p>
+      <ul class="footer-links">
+        <li><a href="terminos.html">Términos y condiciones</a></li>
+        <li><a href="privacidad.html">Política de privacidad</a></li>
+        <li><a href="terminos.html#prestador">Datos del prestador</a></li>
+        <li><a href="arrepentimiento.html">Botón de arrepentimiento y baja</a></li>
+        <li><a href="https://www.argentina.gob.ar/produccion/defensadelconsumidor/formulario" target="_blank" rel="noopener">Defensa de las y los consumidores. Para reclamos ingrese aquí</a></li>
       </ul>
     </div>
     <div>
@@ -245,18 +263,18 @@
       <ul class="footer-links">
         <li><a href="https://wa.me/543872271144" target="_blank" rel="noopener">WhatsApp: +54 387 227-1144</a></li>
         <li><a href="mailto:hola@septimapacha.com">hola@septimapacha.com</a></li>
-        <li><a href="https://g.page/r/REEMPLAZAR-CON-TU-ENLACE-DE-GOOGLE-BUSINESS" target="_blank" rel="noopener">Perfil de Google Business</a></li>
+        <li>Salta, Argentina · atención remota</li>
       </ul>
       <div class="footer-social">
-        <a href="https://www.instagram.com/septimapacha/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="#2ECC71" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="#2ECC71" stroke-width="1.5"/><circle cx="17" cy="7" r="0.8"/></svg></a>
-        <a href="https://www.facebook.com/profile.php?id=61579308766458" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 5 3.64 9.12 8.44 9.88v-7h-2.54V12h2.54V9.85c0-2.52 1.5-3.9 3.75-3.9 1.09 0 2.23.19 2.23.19v2.45h-1.26c-1.24 0-1.62.77-1.62 1.56V12h2.77l-.44 2.88h-2.33v7c4.8-.76 8.44-4.88 8.44-9.88C22 6.48 17.52 2 12 2z" fill="none" stroke="#2ECC71" stroke-width="1"/></svg></a>
-        <a href="https://www.youtube.com/@septima.pacha" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://www.instagram.com/septimapacha/" target="_blank" rel="noopener" aria-label="Instagram de Séptima Pacha"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="#2ECC71" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="#2ECC71" stroke-width="1.5"/><circle cx="17" cy="7" r="0.8"/></svg></a>
+        <a href="https://www.facebook.com/profile.php?id=61579308766458" target="_blank" rel="noopener" aria-label="Facebook de Séptima Pacha"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 5 3.64 9.12 8.44 9.88v-7h-2.54V12h2.54V9.85c0-2.52 1.5-3.9 3.75-3.9 1.09 0 2.23.19 2.23.19v2.45h-1.26c-1.24 0-1.62.77-1.62 1.56V12h2.77l-.44 2.88h-2.33v7c4.8-.76 8.44-4.88 8.44-9.88C22 6.48 17.52 2 12 2z" fill="none" stroke="#2ECC71" stroke-width="1"/></svg></a>
+        <a href="https://www.youtube.com/@septima.pacha" target="_blank" rel="noopener" aria-label="YouTube de Séptima Pacha"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
       </div>
     </div>
   </div>
-  <p class="footer-bottom">© 2026 Séptima Pacha — Desarrollo web en Salta para toda Argentina.</p>
+  <p class="footer-bottom">© 2026 Natalia Jimena Almagro · Séptima Pacha — Diseño de páginas web en Salta para toda Argentina.</p>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=9"></script>
 </body>
 </html>

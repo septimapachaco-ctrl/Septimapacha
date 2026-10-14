@@ -4,6 +4,22 @@
    servicios.html, codigo-fluido.html y plantillas.html.
    ========================================================= */
 
+/* ---------- Tipografías alojadas en el propio sitio (sin Google Fonts) ---------- */
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('../fonts/playfair-display-latin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../fonts/montserrat-latin.woff2') format('woff2');
+}
+
 /* ---------- Reset ---------- */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -68,12 +84,12 @@ body.theme-pacha { background: var(--pacha-bg); }
 body.page-home {
   background:
     linear-gradient(180deg, rgba(6, 14, 22, 0.6), rgba(6, 14, 22, 0.82)),
-    url('../img/fondo2.jpg') center/cover no-repeat fixed;
+    url('../img/fondo2.webp') center/cover no-repeat fixed;
 }
 body.page-sub {
   background:
     linear-gradient(180deg, rgba(6, 14, 22, 0.65), rgba(6, 14, 22, 0.85)),
-    url('../img/fondo3.jpg') center/cover no-repeat fixed;
+    url('../img/fondo3.webp') center/cover no-repeat fixed;
 }
 @media (max-width: 768px) {
   body.page-home, body.page-sub { background-attachment: scroll; }
@@ -466,15 +482,15 @@ a { color: inherit; }
 
 .hero-brand {
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: -1rem;
+  line-height: 1.3;
+  margin-bottom: -0.5rem;
 }
 
 .hero-title-alt {
   font-family: var(--font-heading);
-  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  font-size: clamp(2.1rem, 4.6vw, 3.6rem);
   font-weight: 700;
   line-height: 1.15;
   color: var(--pacha-oro);
@@ -539,7 +555,7 @@ a { color: inherit; }
   padding: 5.5rem 1.5rem;
   background:
     linear-gradient(160deg, rgba(107, 35, 13, 0.35) 0%, rgba(107, 35, 13, 0.15) 45%, rgba(107, 35, 13, 0.35) 100%),
-    url('../img/fondo4.jpg') center/cover no-repeat;
+    url('../img/fondo4.webp') center/cover no-repeat;
 }
 
 .pacha-fire-title {
@@ -577,7 +593,7 @@ a { color: inherit; }
   position: relative;
   background:
     linear-gradient(180deg, rgba(4, 10, 16, 0.72), rgba(4, 10, 16, 0.88)),
-    url('../img/fondo1.jpg') center/cover no-repeat;
+    url('../img/fondo1.webp') center/cover no-repeat;
 }
 .services-inner {
   max-width: var(--max-width);
@@ -901,7 +917,7 @@ a { color: inherit; }
 }
 .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
 .form-field label { font-weight: 600; font-size: 0.9rem; }
-.form-field input, .form-field textarea {
+.form-field input, .form-field textarea, .form-field select {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-sm);
@@ -988,7 +1004,7 @@ a { color: inherit; }
   align-items: center;
   justify-content: center;
   gap: 1.25rem;
-  transition: opacity 0.8s ease;
+  transition: opacity 0.5s ease;
 }
 .splash-screen.is-hidden { opacity: 0; pointer-events: none; }
 .splash-logo {
@@ -1133,3 +1149,64 @@ a { color: inherit; }
   .hero { padding-top: 7rem; }
   .site-header { padding: 0.85rem 1rem; }
 }
+
+/* ---------- Header: acceso al botón de arrepentimiento (Res. SCI 424/2020) ---------- */
+.header-actions { display: flex; align-items: center; gap: 0.9rem; }
+.header-legal-link {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  white-space: nowrap;
+}
+.header-legal-link:hover, .header-legal-link:focus-visible { color: var(--fluido-primary); }
+@media (max-width: 480px) {
+  .site-logo { font-size: 1.05rem; }
+  .header-actions { gap: 0.5rem; }
+  .header-legal-link { font-size: 0.65rem; white-space: normal; max-width: 6.5rem; text-align: right; line-height: 1.2; }
+}
+
+/* ---------- Pasos "Cómo trabajamos" ---------- */
+.steps-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+}
+.step-number {
+  width: 2.6rem; height: 2.6rem;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--fluido-price);
+  color: #1a1100;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Páginas de texto (legales, guías, sobre mí) ---------- */
+.prose { max-width: 780px; margin: 0 auto; color: var(--text-muted); }
+.prose h2 { font-family: var(--font-heading); color: var(--fluido-primary); font-size: 1.6rem; margin: 2.5rem 0 1rem; scroll-margin-top: 90px; }
+.prose h3 { color: var(--fluido-accent); font-size: 1.15rem; margin: 1.6rem 0 0.6rem; }
+.prose p, .prose ul, .prose ol, .prose table { margin-bottom: 1rem; }
+.prose ul, .prose ol { padding-left: 1.3rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose strong { color: var(--text-light); }
+.prose a { color: var(--fluido-secondary); text-decoration: underline; }
+.prose .lead { font-size: 1.15rem; color: var(--text-light); }
+.prose .updated { font-size: 0.85rem; color: var(--text-faint); }
+.prose table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.prose th, .prose td { text-align: left; padding: 0.6rem 0.7rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); vertical-align: top; }
+.prose th { color: var(--text-light); }
+.prose td:last-child { white-space: nowrap; color: var(--fluido-price); font-weight: 600; }
+.table-scroll { overflow-x: auto; margin-bottom: 1rem; }
+.fact-list { list-style: none; padding: 0 !important; border: 1px solid rgba(46, 204, 113, 0.25); border-radius: var(--radius-md); background: rgba(10, 26, 42, 0.6); }
+.fact-list li { padding: 0.7rem 1.1rem; margin: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+.fact-list li:last-child { border-bottom: 0; }
+.callout { border-left: 4px solid var(--fluido-price); background: rgba(243, 156, 18, 0.08); padding: 1rem 1.2rem; border-radius: var(--radius-sm); margin: 1.5rem 0; }
+.page-hero { min-height: auto; padding-top: 8rem; padding-bottom: 2rem; }
+.form-field select { width: 100%; }
+.footer-grid .card-text a { color: var(--fluido-primary); }
+.footer-links li { color: var(--text-faint); }
+.form-field select option { color: #111; }
+.page-hero .hero-title { font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1.15; }
+.page-hero + .section { padding-top: 2rem; }

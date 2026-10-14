@@ -2,7 +2,7 @@
  * Séptima Pacha Co. — main.js
  * JS compartido por todas las páginas. Cada función revisa que sus
  * elementos existan antes de actuar, así el mismo archivo sirve para
- * index.html, servicios.html, codigo-fluido.html y plantillas.html.
+ * todas las páginas del sitio.
  */
 
 /* Menú de navegación (hamburguesa + panel lateral) */
@@ -68,51 +68,77 @@ function initSplashScreen() {
     splash.style.display = 'none';
     return;
   }
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      splash.classList.add('is-hidden');
-      try { sessionStorage.setItem('septimaSplashShown', '1'); } catch (e) { /* almacenamiento no disponible */ }
-      setTimeout(() => { splash.style.display = 'none'; }, 800);
-    }, 2500);
-  });
+  // Se muestra apenas un instante para no demorar la carga visible (LCP)
+  setTimeout(() => {
+    splash.classList.add('is-hidden');
+    try { sessionStorage.setItem('septimaSplashShown', '1'); } catch (e) { /* almacenamiento no disponible */ }
+    setTimeout(() => { splash.style.display = 'none'; }, 500);
+  }, 400);
 }
 
 /**
- * Formulario de contacto sin backend: arma un enlace mailto con los
- * datos cargados. Si en el futuro se conecta un servicio como
- * Formspree o Web3Forms, alcanza con reemplazar este handler por un
- * fetch() al endpoint correspondiente.
+ * Formularios (.contact-form): contacto y botón de arrepentimiento/baja.
+ * Si el form tiene una access key real de Web3Forms en data-web3forms-key,
+ * envía los datos por fetch y llegan al email configurado en Web3Forms.
+ * Mientras la key sea el placeholder, abre el cliente de correo (mailto).
  */
-function initContactForm() {
-  const form = document.querySelector('.contact-form');
-  if (!form) return;
-  const status = form.querySelector('.form-status');
-  const destination = form.dataset.destinationEmail || 'hola@septimapacha.com';
+function initContactForms() {
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const nombre = form.querySelector('#nombre').value.trim();
-    const email = form.querySelector('#email').value.trim();
-    const mensaje = form.querySelector('#mensaje').value.trim();
-    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  document.querySelectorAll('.contact-form').forEach((form) => {
+    const status = form.querySelector('.form-status');
+    const destination = form.dataset.destinationEmail || 'hola@septimapacha.com';
+    const key = form.dataset.web3formsKey || '';
+    const hasKey = key && !key.startsWith('REEMPLAZAR');
+    const setStatus = (text, type) => {
+      if (!status) return;
+      status.textContent = text;
+      status.className = `form-status is-${type}`;
+    };
 
-    if (!nombre || !emailValido || !mensaje) {
-      if (status) {
-        status.textContent = 'Completá nombre, un email válido y tu mensaje.';
-        status.className = 'form-status is-error';
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fields = [...form.querySelectorAll('input, select, textarea')]
+        .filter((el) => el.name && el.name !== 'botcheck' && el.type !== 'checkbox');
+      const invalid = fields.find((el) => (el.required && !el.value.trim())
+        || (el.type === 'email' && el.value.trim() && !EMAIL_RE.test(el.value.trim())));
+      if (invalid) {
+        const label = form.querySelector(`label[for="${invalid.id}"]`);
+        setStatus(`Revisá el campo "${label ? label.textContent.replace('*', '').trim() : invalid.name}".`, 'error');
+        invalid.focus();
+        return;
       }
-      return;
-    }
 
-    const subject = encodeURIComponent(`Consulta web de ${nombre}`);
-    const body = encodeURIComponent(`${mensaje}\n\nResponder a: ${email}`);
-    window.location.href = `mailto:${destination}?subject=${subject}&body=${body}`;
+      const data = {};
+      fields.forEach((el) => { data[el.name] = el.value.trim(); });
+      const subject = `${form.dataset.subject || 'Consulta desde la web'} — ${data.nombre || ''}`.trim();
 
-    if (status) {
-      status.textContent = 'Se abrió tu cliente de correo con el mensaje listo para enviar.';
-      status.className = 'form-status is-success';
-    }
-    form.reset();
+      if (hasKey) {
+        setStatus('Enviando…', 'success');
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify({ access_key: key, subject, from_name: 'Web Séptima Pacha', botcheck: form.querySelector('[name="botcheck"]')?.checked || false, ...data }),
+          });
+          const json = await res.json();
+          if (!json.success) throw new Error(json.message);
+          setStatus(form.dataset.successMessage || '¡Gracias! Recibimos tu mensaje y te respondemos a la brevedad.', 'success');
+          form.reset();
+        } catch (err) {
+          setStatus('No pudimos enviar el mensaje. Probá de nuevo o escribinos por WhatsApp.', 'error');
+        }
+        return;
+      }
+
+      const body = fields.map((el) => {
+        const label = form.querySelector(`label[for="${el.id}"]`);
+        return `${label ? label.textContent.replace('*', '').trim() : el.name}: ${el.value.trim()}`;
+      }).join('\n');
+      window.location.href = `mailto:${destination}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      setStatus('Se abrió tu cliente de correo con el mensaje listo para enviar.', 'success');
+      form.reset();
+    });
   });
 }
 
@@ -137,7 +163,7 @@ function initProjectImageFallback() {
   });
 }
 
-/* Toggle de idioma / moneda en servicios.html */
+/* Conversión referencial ARS → USD en servicios.html */
 function initServiciosControls() {
   const currencyBtn = document.getElementById('currencyBtn');
   if (!currencyBtn) return;
@@ -176,6 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initSplashScreen();
   initProjectImageFallback();
-  initContactForm();
+  initContactForms();
   initServiciosControls();
 });
