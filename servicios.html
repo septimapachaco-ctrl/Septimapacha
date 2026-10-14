@@ -151,6 +151,13 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Mantenimiento Estándar"
+            },
+            "priceCurrency": "ARS",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": 50000,
+              "priceCurrency": "ARS",
+              "unitCode": "MON"
             }
           },
           {
@@ -549,9 +556,7 @@
         <p class="plan-badge">Recomendado</p>
         <h3 class="pricing-name">Mantenimiento Estándar</h3>
         <p class="pricing-desc">Actualizado, monitoreado y con cambios todos los meses.</p>
-        <!-- REVISAR ANTES DE PUBLICAR: valores tal cual fueron indicados ($50/mes, promo 3 meses $110).
-             Probable error de escala frente a Básico $30.000 y Premium $80.000. -->
-        <p class="pricing-price"><span class="price-ars">$50</span><span class="price-usd" hidden></span><small>por mes · promoción 3 meses: $110</small></p>
+        <p class="pricing-price"><span class="price-ars" data-ars="50000">$50.000</span><span class="price-usd" hidden></span><small>por mes · promoción 3 meses: $110.000</small></p>
         <ul class="pricing-features">
           <li>Actualizaciones de núcleo, plugins y temas</li>
           <li>Backups semanales</li>

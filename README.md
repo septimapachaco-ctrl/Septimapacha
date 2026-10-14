@@ -30,17 +30,14 @@ puro, sin frameworks, publicado con GitHub Pages.
 
 ## Pendientes para la dueña del sitio
 
-- Completar los datos marcados con `[COMPLETAR: ...]` en `terminos.html` y
-  `privacidad.html` (CUIT, condición fiscal, domicilio). Buscarlos con:
-  `grep -rn "COMPLETAR" *.html`
+- Agregar la condición fiscal (ARCA) y, si se quiere, el domicilio fiscal
+  completo en `terminos.html` (hay un comentario que marca el lugar).
 - Pegar el código de **Data Fiscal (ARCA)** en `terminos.html` (hay un
   comentario que marca el lugar).
 - Crear una cuenta gratuita en https://web3forms.com con
   hola@septimapacha.com y reemplazar `REEMPLAZAR-CON-ACCESS-KEY-DE-WEB3FORMS`
   en index.html, servicios.html y arrepentimiento.html. Mientras tanto, los
   formularios abren el cliente de correo.
-- Confirmar el precio del Mantenimiento Estándar en `servicios.html`
-  (comentario "REVISAR ANTES DE PUBLICAR").
 - Sumar una foto en `img/natalia-almagro.webp` (ver comentario en sobre-mi.html).
 - Sumar 2-3 testimonios reales en `codigo-fluido.html`.
 - Crear el Perfil de Empresa en Google y agregar su enlace al footer y a
