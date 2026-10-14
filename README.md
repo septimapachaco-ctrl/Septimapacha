@@ -28,16 +28,18 @@ puro, sin frameworks, publicado con GitHub Pages.
 └── robots.txt
 ```
 
+## Formularios
+
+Los formularios (index, servicios y arrepentimiento) envían por Web3Forms
+usando la access key del atributo `data-web3forms-key`. Los mensajes llegan
+al email registrado en la cuenta de Web3Forms.
+
 ## Pendientes para la dueña del sitio
 
 - Agregar la condición fiscal (ARCA) y, si se quiere, el domicilio fiscal
   completo en `terminos.html` (hay un comentario que marca el lugar).
 - Pegar el código de **Data Fiscal (ARCA)** en `terminos.html` (hay un
   comentario que marca el lugar).
-- Crear una cuenta gratuita en https://web3forms.com con
-  hola@septimapacha.com y reemplazar `REEMPLAZAR-CON-ACCESS-KEY-DE-WEB3FORMS`
-  en index.html, servicios.html y arrepentimiento.html. Mientras tanto, los
-  formularios abren el cliente de correo.
 - Sumar una foto en `img/natalia-almagro.webp` (ver comentario en sobre-mi.html).
 - Sumar 2-3 testimonios reales en `codigo-fluido.html`.
 - Crear el Perfil de Empresa en Google y agregar su enlace al footer y a
